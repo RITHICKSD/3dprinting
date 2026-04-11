@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | 3DPrint Pro</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <meta name="description"
+        content="Explore our high-precision 3D printing services, from rapid prototyping to industrial batch production.">
+    <style>
+        html,
+        body {
+            overflow-x: hidden !important;
+            max-width: 100% !important;
+        }
+
+        * {
+            box-sizing: border-box;
+            min-width: 0;
+        }
+    </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="3DPrint Pro Logo" style="height: 42px; width: auto;">
+        </a>
+
+        <nav>
+            <div class="nav-item">
+                <a href="index.html" class="nav-link">Home <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown">
+                    <a href="index.html" class="dropdown-link">Home 1</a>
+                    <a href="home2.html" class="dropdown-link">Home 2</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="about.html" class="nav-link">About</a>
+            </div>
+            <div class="nav-item">
+                <a href="services.html" class="nav-link" style="color: var(--primary);">Services</a>
+            </div>
+            <div class="nav-item">
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-item">
+                <a href="user-dashboard.html" class="nav-link">Dashboard <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown">
+                    <a href="user-dashboard.html" class="dropdown-link">User Dashboard</a>
+                    <a href="admin-dashboard.html" class="dropdown-link">Admin Dashboard</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-right">
+            <button class="icon-btn" id="rtl-toggle" title="Switch RTL/LTR"><i class="fas fa-globe"></i></button>
+            <button class="icon-btn" id="theme-toggle" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+            <a href="login.html" class="login-btn">Login</a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+        <div class="mobile-nav-drawer">
+            <button class="mobile-nav-link" onclick="toggleMobileSub('home-sub',this)">
+                Home <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="mobile-sub-group" id="home-sub">
+                <a href="index.html" class="mobile-sub-link">Home 1</a>
+                <a href="home2.html" class="mobile-sub-link">Home 2</a>
+            </div>
+            <a href="about.html" class="mobile-nav-link">About</a>
+            <a href="services.html" class="mobile-nav-link active">Services</a>
+            <a href="contact.html" class="mobile-nav-link">Contact</a>
+            <button class="mobile-nav-link" onclick="toggleMobileSub('dash-sub',this)">
+                Dashboard <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="mobile-sub-group" id="dash-sub">
+                <a href="user-dashboard.html" class="mobile-sub-link">User Dashboard</a>
+                <a href="admin-dashboard.html" class="mobile-sub-link">Admin Dashboard</a>
+            </div>
+            <div class="mobile-nav-footer">
+                <a href="login.html" class="login-btn" style="flex:1; text-align:center;">Login</a>
+            </div>
+        </div>
+    </div>
+
+    <main style="padding-top: 80px;">
+        <!-- Section 1: Hero -->
+        <section class="hero" style="height: 60vh; min-height: 500px;">
+            <div class="hero-content">
+                <span class="section-tag">Capabilities</span>
+                <h1 style="font-size: 4rem;">The Architecture of Possibility</h1>
+                <p>From a single concept to a million units, we provide the industrial backbone for your most ambitious
+                    projects.</p>
+            </div>
+        </section>
+
+        <!-- Section 2: Rapid Prototyping -->
+        <section id="prototyping" style="background: var(--bg-card);">
+            <div style="display: flex; gap: 60px; align-items: center; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px;">
+                    <span class="section-tag">Speed</span>
+                    <h2 class="section-title">Rapid Layer Synthesis</h2>
+                    <p style="margin: 20px 0;">Fail fast, iterate faster. Our express prototyping service delivers
+                        high-fidelity PLA and Resin models in under 24 hours.</p>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-bolt"
+                                style="color: var(--primary); margin-right: 10px;"></i> Next-day shipping available</li>
+                        <li style="margin-bottom: 10px;"><i class="fas fa-bolt"
+                                style="color: var(--primary); margin-right: 10px;"></i> Instant quote API</li>
+                    </ul>
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="3d8.jpg"
+                        style="width: 100%; border-radius: 24px;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Batch Production -->
+        <section id="batch">
+            <div class="section-head">
+                <span class="section-tag">Scaling</span>
+                <h2 class="section-title">Industrial Batch Manufacturing</h2>
+            </div>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>10 - 1,000 Units</h3>
+                    <p>Ideal for market testing and limited edition runs.</p>
+                </div>
+                <div class="card" style="border-color: var(--primary);">
+                    <h3>1,000 - 10,000 Units</h3>
+                    <p>Optimized production with custom support structures.</p>
+                </div>
+                <div class="card">
+                    <h3>10,000+ Units</h3>
+                    <p>Fully automated manufacturing fleets for global supply.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Specialized Materials -->
+        <section id="materials-detail" style="background: var(--bg-card);">
+            <div class="section-head">
+                <span class="section-tag">Library</span>
+                <h2 class="section-title">Engineered Materials</h2>
+            </div>
+            <div class="grid-3">
+                <div class="card">
+                    <i class="fas fa-fire" style="font-size: 2rem; color: var(--accent); margin-bottom: 20px;"></i>
+                    <h3>High-Temp PEEK</h3>
+                    <p>Advanced polymers for extreme thermal environments.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-tint" style="font-size: 2rem; color: var(--secondary); margin-bottom: 20px;"></i>
+                    <h3>Elastic Resins</h3>
+                    <p>Flexible materials with shore hardness from 30A to 90A.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-layer-group"
+                        style="font-size: 2rem; color: var(--primary); margin-bottom: 20px;"></i>
+                    <h3>Multi-Material</h3>
+                    <p>Print rigid and flexible parts in a single unified component.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Post-Processing -->
+        <section id="finishing">
+            <div style="display: flex; gap: 60px; align-items: center; flex-wrap: wrap-reverse;">
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="https://images.unsplash.com/photo-1590856029826-c7a73142bbf1?auto=format&fit=crop&w=800&q=80"
+                        style="width: 100%; border-radius: 24px;">
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <span class="section-tag">Aesthetics</span>
+                    <h2 class="section-title">The Master's Touch</h2>
+                    <p>Surface finishing is where the magic happens. We offer a full suite of post-production services
+                        to ensure your parts look as good as they function.</p>
+                    <div class="grid-3" style="margin-top: 30px; gap: 15px;">
+                        <div
+                            style="padding: 10px; border: 1px solid var(--border); border-radius: 12px; text-align: center; font-size: 0.8rem;">
+                            Sand Blasting</div>
+                        <div
+                            style="padding: 10px; border: 1px solid var(--border); border-radius: 12px; text-align: center; font-size: 0.8rem;">
+                            Vapor Smoothing</div>
+                        <div
+                            style="padding: 10px; border: 1px solid var(--border); border-radius: 12px; text-align: center; font-size: 0.8rem;">
+                            Anodizing</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Medical/Dental -->
+        <section id="biomedical" style="background: var(--bg-card);">
+            <div class="section-head">
+                <span class="section-tag">Bio-Precision</span>
+                <h2 class="section-title">Medical & Dental Excellence</h2>
+            </div>
+            <div class="grid-3">
+                <div class="card">
+                    <i class="fas fa-tooth" style="font-size: 1.5rem; color: var(--primary);"></i>
+                    <h3>Dental Guides</h3>
+                    <p>Biocompatible Class I and IIa certified materials.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-heartbeat" style="font-size: 1.5rem; color: var(--primary);"></i>
+                    <h3>Patient Models</h3>
+                    <p>Anatomically accurate models for pre-surgical planning.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-dna" style="font-size: 1.5rem; color: var(--primary);"></i>
+                    <h3>Custom Implants</h3>
+                    <p>Osseointegrative titanium lattice structures.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Aerospace & Automotive -->
+        <section id="heavy-industry">
+            <div style="display: flex; gap: 60px; align-items: center; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px;">
+                    <span class="section-tag">Performance</span>
+                    <h2 class="section-title">Heavy Industry Standards</h2>
+                    <p>We supply the parts that power the sky and the road. Our components are tested to withstand
+                        extreme g-forces, vibrations, and temperatures.</p>
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <div
+                        style="background: var(--bg-card); padding: 30px; border-radius: 20px; border: 1px solid var(--border);">
+                        <h4 style="margin-bottom: 20px;">Certification Suite</h4>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;"><span>FAA Part
+                                25</span> <i class="fas fa-check-circle" style="color: #10b981;"></i></div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;"><span>IATF
+                                16949</span> <i class="fas fa-check-circle" style="color: #10b981;"></i></div>
+                        <div style="display: flex; justify-content: space-between;"><span>AS9100 Rev D</span> <i
+                                class="fas fa-check-circle" style="color: #10b981;"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 8: Generative Design -->
+        <section id="design-consultancy" style="background: var(--bg-card);">
+            <div class="section-head">
+                <h2 class="section-title">Generative Design Lab</h2>
+                <p>Don't just print your design—optimize it. Our engineers use topology optimization to reduce part
+                    count and maximize strength-to-weight ratios.</p>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="contact.html" class="login-btn">Speak with an Engineer</a>
+            </div>
+        </section>
+
+        <!-- Section 9: Subscription Models -->
+        <section id="subscriptions">
+            <div class="section-head">
+                <span class="section-tag">Partnership</span>
+                <h2 class="section-title">Enterprise Print-as-a-Service</h2>
+            </div>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Elite Tier</h3>
+                    <p>Reserved capacity with 4h startup time.</p>
+                </div>
+                <div class="card" style="background: var(--primary); color: white;">
+                    <h3>Sovereign Tier</h3>
+                    <p>Dedicated on-site industrial print fleet managed by us.</p>
+                </div>
+                <div class="card">
+                    <h3>Agile Tier</h3>
+                    <p>Pay-as-you-go with volume-based discount credits.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 10: Global Fulfillment -->
+        <section id="fulfillment" style="background: var(--bg-main); text-align: center; padding: 100px 10%;">
+            <i class="fas fa-box-open" style="font-size: 3rem; color: var(--primary); margin-bottom: 20px;"></i>
+            <h2 class="section-title">White-Glove Fulfillment</h2>
+            <p style="max-width: 700px; margin: 20px auto 40px;">From the printer to your doorstep in luxury packaging.
+                Every part is insured, tracked, and delivered with the care it deserves.</p>
+            <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+                <div>
+                    <h4 style="font-size: 1.5rem;">24h</h4>
+                    <p>Avg Turnaround</p>
+                </div>
+                <div>
+                    <h4 style="font-size: 1.5rem;">100%</h4>
+                    <p>Quality Guard</p>
+                </div>
+                <div>
+                    <h4 style="font-size: 1.5rem;">Eco</h4>
+                    <p>Packaging</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-about">
+                <a href="index.html" class="logo footer-logo">
+                    <img src="logo.png" alt="3DPrint Pro Logo" style="height: 48px; width: auto;">
+                </a>
+                <p style="color: var(--text-muted);">The world's leading luxury 3D printing agency. Crafting the
+                    impossible with precision and style.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="#">Knowledge Base</a></li>
+                    <li><a href="#">API Docs</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 3DPrint Pro. All rights reserved.</p>
+            <div style="display: flex; gap: 20px;">
+                <a href="#" style="color: var(--text-muted);"><i class="fab fa-twitter"></i></a>
+                <a href="#" style="color: var(--text-muted);"><i class="fab fa-linkedin"></i></a>
+                <a href="#" style="color: var(--text-muted);"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobile-nav');
+        const overlay = document.getElementById('mobile-nav-overlay');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            mobileNav.classList.toggle('open');
+            document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+        });
+        overlay.addEventListener('click', () => {
+            hamburger.classList.remove('open');
+            mobileNav.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+        function toggleMobileSub(id, btn) {
+            document.getElementById(id).classList.toggle('open');
+            btn.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3DPrint Pro | The Future of Manufacturing</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <meta name="description"
+        content="Premium 3D printing services with industrial precision and luxury design. Explore the future of additive manufacturing.">
+    <style>
+        html,
+        body {
+            overflow-x: hidden !important;
+            max-width: 100% !important;
+        }
+
+        * {
+            box-sizing: border-box;
+            min-width: 0;
+        }
+    </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="3DPrint Pro Logo" style="height: 42px; width: auto;">
+        </a>
+
+        <nav>
+            <div class="nav-item">
+                <a href="index.html" class="nav-link">Home <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown">
+                    <a href="index.html" class="dropdown-link">Home 1</a>
+                    <a href="home2.html" class="dropdown-link">Home 2</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="about.html" class="nav-link">About</a>
+            </div>
+            <div class="nav-item">
+                <a href="services.html" class="nav-link">Services</a>
+            </div>
+            <div class="nav-item">
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-item">
+                <a href="user-dashboard.html" class="nav-link">Dashboard <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown">
+                    <a href="user-dashboard.html" class="dropdown-link">User Dashboard</a>
+                    <a href="admin-dashboard.html" class="dropdown-link">Admin Dashboard</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-right">
+            <button class="icon-btn" id="rtl-toggle" title="Switch RTL/LTR"><i class="fas fa-globe"></i></button>
+            <button class="icon-btn" id="theme-toggle" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+            <a href="login.html" class="login-btn">Login</a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+        <div class="mobile-nav-drawer">
+            <button class="mobile-nav-link" onclick="toggleMobileSub('home-sub',this)">
+                Home <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="mobile-sub-group" id="home-sub">
+                <a href="index.html" class="mobile-sub-link">Home 1</a>
+                <a href="home2.html" class="mobile-sub-link">Home 2</a>
+            </div>
+            <a href="about.html" class="mobile-nav-link">About</a>
+            <a href="services.html" class="mobile-nav-link">Services</a>
+            <a href="contact.html" class="mobile-nav-link">Contact</a>
+            <button class="mobile-nav-link" onclick="toggleMobileSub('dash-sub',this)">
+                Dashboard <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="mobile-sub-group" id="dash-sub">
+                <a href="user-dashboard.html" class="mobile-sub-link">User Dashboard</a>
+                <a href="admin-dashboard.html" class="mobile-sub-link">Admin Dashboard</a>
+            </div>
+            <div class="mobile-nav-footer">
+                <a href="login.html" class="login-btn" style="flex:1; text-align:center;">Login</a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- Section 1: Hero -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <span class="section-tag">Next-Gen Manufacturing</span>
+                <h1>Precision in Every Layer</h1>
+                <p>Revolutionizing the way we create, from microscopic components to industrial scale architectures. The
+                    only limit is your imagination.</p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="#" class="login-btn" style="padding: 15px 40px; font-size: 1.1rem;">Get Started</a>
+                    <a href="#" class="icon-btn"
+                        style="width: auto; padding: 0 20px; border: 1px solid var(--border); border-radius: 30px;">Watch
+                        Reel</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Stats -->
+        <section id="stats">
+            <div class="grid-3">
+                <div class="card" style="text-align: center;">
+                    <h2 style="font-size: 3rem; color: var(--primary);">250k+</h2>
+                    <p style="color: var(--text-muted);">Units Printed</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <h2 style="font-size: 3rem; color: var(--secondary);">0.01mm</h2>
+                    <p style="color: var(--text-muted);">Max Precision</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <h2 style="font-size: 3rem; color: var(--accent);">45+</h2>
+                    <p style="color: var(--text-muted);">Materials Available</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: The Process -->
+        <section id="process">
+            <div class="section-head">
+                <span class="section-tag">Workflow</span>
+                <h2 class="section-title">How We Build</h2>
+            </div>
+            <div class="grid-3">
+                <div class="card">
+                    <i class="fas fa-pencil-ruler"
+                        style="font-size: 2rem; color: var(--primary); margin-bottom: 20px;"></i>
+                    <h3>Digital Blueprint</h3>
+                    <p>Upload your CAD models or work with our design team to perfect your vision.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-microchip"
+                        style="font-size: 2rem; color: var(--secondary); margin-bottom: 20px;"></i>
+                    <h3>Layer Synthesis</h3>
+                    <p>Our industrial-grade printers Begin the meticulous process of additive manufacturing.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-box-open" style="font-size: 2rem; color: var(--accent); margin-bottom: 20px;"></i>
+                    <h3>Post-Processing</h3>
+                    <p>Hand-finished polishing, coating, and testing to ensure maximum quality.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Materials Showcase -->
+        <section id="materials" style="background: var(--bg-card);">
+            <div class="section-head">
+                <span class="section-tag">Library</span>
+                <h2 class="section-title">Elite Materials</h2>
+            </div>
+            <div class="grid-3">
+                <div class="card explorer-card"
+                    style="background: url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80'); background-size: cover; min-height: 400px; display: flex; align-items: flex-end; color: white;">
+                    <div style="background: rgba(0,0,0,0.6); padding: 20px; border-radius: 12px; width: 100%;">
+                        <h3>Carbon Fiber Infused</h3>
+                        <p>Strength of steel with half the weight.</p>
+                    </div>
+                </div>
+                <div class="card explorer-card"
+                    style="background: url('https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?auto=format&fit=crop&w=800&q=80'); background-size: cover; min-height: 400px; display: flex; align-items: flex-end; color: white;">
+                    <div style="background: rgba(0,0,0,0.6); padding: 20px; border-radius: 12px; width: 100%;">
+                        <h3>Crystalline Resin</h3>
+                        <p>Unmatched clarity for optical components.</p>
+                    </div>
+                </div>
+                <div class="card explorer-card"
+                    style="background: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80'); background-size: cover; min-height: 400px; display: flex; align-items: flex-end; color: white;">
+                    <div style="background: rgba(0,0,0,0.6); padding: 20px; border-radius: 12px; width: 100%;">
+                        <h3>Liquid Titanium</h3>
+                        <p>Aerospace grade metal for extreme durability.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Technology Stack -->
+        <section id="tech">
+            <div class="section-head">
+                <span class="section-tag">Hardware</span>
+                <h2 class="section-title">The Engine of Innovation</h2>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h3 style="font-size: 2rem; margin-bottom: 20px;">SLS & SLA Mastery</h3>
+                    <p style="margin-bottom: 30px;">We utilize Selective Laser Sintering and Stereolithography to
+                        produce parts with geometric complexities that traditional manufacturing cannot achieve.</p>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 15px;"><i class="fas fa-check-circle"
+                                style="color: var(--primary);"></i> Multi-Laser Synchronization</li>
+                        <li style="margin-bottom: 15px;"><i class="fas fa-check-circle"
+                                style="color: var(--primary);"></i> High-Temp Chamber Control</li>
+                        <li style="margin-bottom: 15px;"><i class="fas fa-check-circle"
+                                style="color: var(--primary);"></i> Real-time AI Error Correction</li>
+                    </ul>
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="3de.webp"
+                        alt="3D Printer"
+                        style="width: 100%; border-radius: 24px; box-shadow: 0 30px 60px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Design Impact -->
+        <section id="impact" style="background: var(--bg-main);">
+            <div class="section-head">
+                <span class="section-tag">Legacy</span>
+                <h2 class="section-title">Shaping Realities</h2>
+            </div>
+            <div class="grid-3">
+                <div class="card">
+                    <h4>Aerospace</h4>
+                    <p>Lightweighting engine components by up to 60%.</p>
+                </div>
+                <div class="card">
+                    <h4>Medical Tech</h4>
+                    <p>Patient-specific orthopedic implants and tools.</p>
+                </div>
+                <div class="card">
+                    <h4>Architectural</h4>
+                    <p>Complex structural nodes for modern facade systems.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Innovation Lab -->
+        <section id="lab">
+            <div
+                style="background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 40px; padding: 100px 10%; color: white; text-align: center;">
+                <span class="section-tag" style="color: rgba(255,255,255,0.8);">R&D Centers</span>
+                <h2 class="section-title" style="color: white;">Pushing Boundaries</h2>
+                <p style="font-size: 1.2rem; max-width: 700px; margin: 20px auto 40px; opacity: 0.9;">Our labs are
+                    currently developing 4D printing materials that respond to environmental stimuli.</p>
+                <a href="#" class="login-btn" style="background: white; color: var(--primary);">Join Our Research</a>
+            </div>
+        </section>
+
+        <!-- Section 8: Quality Assurance -->
+        <section id="quality">
+            <div class="section-head">
+                <span class="section-tag">Standard</span>
+                <h2 class="section-title">Zero Defect Policy</h2>
+            </div>
+            <div class="grid-3">
+                <div class="card">
+                    <i class="fas fa-microscope" style="font-size: 1.5rem; color: var(--primary);"></i>
+                    <h3>Optical Scanning</h3>
+                    <p>Micron-level deviation checks on every batch.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-shield-alt" style="font-size: 1.5rem; color: var(--primary);"></i>
+                    <h3>Stress Testing</h3>
+                    <p>Simulating mechanical failure points before delivery.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-certificate" style="font-size: 1.5rem; color: var(--primary);"></i>
+                    <h3>ISO 9001 Certified</h3>
+                    <p>Compliant with global manufacturing standards.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 9: Design Principles -->
+        <section id="principles">
+            <div style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap-reverse;">
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80"
+                        style="width: 100%; border-radius: 24px;">
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <span class="section-tag">Philosophy</span>
+                    <h2 class="section-title">Generative Aesthetics</h2>
+                    <p>We embrace algorithms that mimic biological growth, creating structures that are both beautiful
+                        and functionally optimized.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 10: Global Network -->
+        <section id="network" style="background: var(--bg-card);">
+            <div class="section-head">
+                <span class="section-tag">Presence</span>
+                <h2 class="section-title">Distributed Manufacturing</h2>
+            </div>
+            <div
+                style="height: clamp(200px, 40vw, 400px); background: url('https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1200&q=80'); background-size: cover; border-radius: 24px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                <div
+                    style="background: rgba(255,255,255,0.9); padding: clamp(20px, 4vw, 40px); border-radius: 20px; text-align: center; color: #000; max-width: 90%;">
+                    <h3>12 Global Hubs</h3>
+                    <p>Fast shipping to 180+ countries.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 11: Sustainability -->
+        <section id="green">
+            <div class="grid-3" style="align-items: center;">
+                <div>
+                    <span class="section-tag">Eco-System</span>
+                    <h2 class="section-title">Green Printing</h2>
+                </div>
+                <div class="card">
+                    <h3>Recycled Polymers</h3>
+                    <p>Using 90% ocean-bound plastic for decorative prints.</p>
+                </div>
+                <div class="card">
+                    <h3>Zero Waste</h3>
+                    <p>Our closed-loop system recycles all support material.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 12: Community Showcase -->
+        <section id="community">
+            <div class="section-head">
+                <span class="section-tag">Artists</span>
+                <h2 class="section-title">Designer Gallery</h2>
+            </div>
+            <div style="display: flex; gap: 10px; overflow-x: auto; padding-bottom: 20px;">
+                <div style="min-width: 300px; height: 300px; background: #eee; border-radius: 12px; overflow: hidden;">
+                    <img src="3d2.jpg"
+                        style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div style="min-width: 300px; height: 300px; background: #eee; border-radius: 12px; overflow: hidden;">
+                    <img src="3d4.webp"
+                        style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div style="min-width: 300px; height: 300px; background: #eee; border-radius: 12px; overflow: hidden;">
+                    <img src="3d3.jpg"
+                        style="width: 100%; height: 100%; object-fit: cover;"></div>
+                <div style="min-width: 300px; height: 300px; background: #eee; border-radius: 12px; overflow: hidden;">
+                    <img src="3d5.webp"
+                        style="width: 100%; height: 100%; object-fit: cover;"></div>
+            </div>
+        </section>
+
+        <!-- Section 13: Pricing -->
+        <section id="pricing">
+            <div class="section-head">
+                <span class="section-tag">Plans</span>
+                <h2 class="section-title">Scalable Solutions</h2>
+            </div>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Hobbyist</h3>
+                    <p style="font-size: 2rem; margin: 10px 0;">$49<span style="font-size: 1rem;">/mo</span></p>
+                    <ul>
+                        <li>5 Standard Prints</li>
+                        <li>PLA Materials</li>
+                        <li>72h Lead Time</li>
+                    </ul>
+                </div>
+                <div class="card" style="border-color: var(--primary); transform: scale(1.05);">
+                    <div
+                        style="background: var(--primary); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; display: inline-block; margin-bottom: 10px;">
+                        POPULAR</div>
+                    <h3>Pro Maker</h3>
+                    <p style="font-size: 2rem; margin: 10px 0;">$199<span style="font-size: 1rem;">/mo</span></p>
+                    <ul>
+                        <li>Unlimited Standard Prints</li>
+                        <li>Specialty Resins</li>
+                        <li>24h Lead Time</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Enterprise</h3>
+                    <p style="font-size: 2rem; margin: 10px 0;">Custom</p>
+                    <ul>
+                        <li>Full Fleet Access</li>
+                        <li>Titanium & Carbon Fiber</li>
+                        <li>On-site Engineers</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 14: FAQ -->
+        <section id="faq">
+            <div class="section-head">
+                <h2 class="section-title">Common Questions</h2>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <details
+                    style="margin-bottom: 20px; padding: 20px; border: 1px solid var(--border); border-radius: 12px; background: var(--bg-card);">
+                    <summary style="font-weight: 600; cursor: pointer;">What is the largest build volume?</summary>
+                    <p style="margin-top: 10px;">Our industrial SLS printers can print up to 1000mm x 1000mm x 1000mm.
+                    </p>
+                </details>
+                <details
+                    style="margin-bottom: 20px; padding: 20px; border: 1px solid var(--border); border-radius: 12px; background: var(--bg-card);">
+                    <summary style="font-weight: 600; cursor: pointer;">How do you secure my IP?</summary>
+                    <p style="margin-top: 10px;">All files are encrypted and automatically purged from our servers 48
+                        hours after delivery.</p>
+                </details>
+                <details
+                    style="margin-bottom: 20px; padding: 20px; border: 1px solid var(--border); border-radius: 12px; background: var(--bg-card);">
+                    <summary style="font-weight: 600; cursor: pointer;">Can you print functional moving parts?</summary>
+                    <p style="margin-top: 10px;">Yes, using SLS technology we can print nested assemblies that function
+                        immediately out of the printer.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- Section 15: Newsletter -->
+        <section id="newsletter">
+            <div
+                style="background: var(--bg-card); padding: 80px; border-radius: 40px; border: 1px solid var(--border); text-align: center;">
+                <h2>Stay Ahead of the Curve</h2>
+                <p style="margin: 20px 0 40px; color: var(--text-muted);">Get the latest trends in additive
+                    manufacturing delivered to your inbox.</p>
+                <div style="display: flex; max-width: 500px; margin: 0 auto; gap: 10px; flex-wrap: wrap;">
+                    <input type="email" placeholder="Your email address"
+                        style="flex: 1; min-width: 0; padding: 15px 25px; border-radius: 30px; border: 1px solid var(--border); background: var(--bg-main); color: var(--text-main);">
+                    <button class="login-btn" style="border: none; cursor: pointer;">Subscribe</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-about">
+                <a href="index.html" class="logo footer-logo">
+                    <img src="logo.png" alt="3DPrint Pro Logo" style="height: 48px; width: auto;">
+                </a>
+                <p style="color: var(--text-muted);">The world's leading luxury 3D printing agency. Crafting the
+                    impossible with precision and style.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="#">Knowledge Base</a></li>
+                    <li><a href="#">API Docs</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 3DPrint Pro. All rights reserved.</p>
+            <div style="display: flex; gap: 20px;">
+                <a href="#" style="color: var(--text-muted);"><i class="fab fa-twitter"></i></a>
+                <a href="#" style="color: var(--text-muted);"><i class="fab fa-linkedin"></i></a>
+                <a href="#" style="color: var(--text-muted);"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+    <script>
+        // Mobile nav
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobile-nav');
+        const overlay = document.getElementById('mobile-nav-overlay');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            mobileNav.classList.toggle('open');
+            document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+        });
+        overlay.addEventListener('click', () => {
+            hamburger.classList.remove('open');
+            mobileNav.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+        function toggleMobileSub(id, btn) {
+            const sub = document.getElementById(id);
+            sub.classList.toggle('open');
+            btn.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

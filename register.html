@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | 3DPrint Pro</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-main);
+            background-image: radial-gradient(circle at top right, var(--primary-glow), transparent),
+                radial-gradient(circle at bottom left, rgba(6, 182, 212, 0.1), transparent);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .auth-controls {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+            z-index: 100;
+        }
+
+        .icon-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .icon-btn:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
+            color: var(--primary);
+            box-shadow: 0 8px 25px var(--primary-glow);
+        }
+
+        .auth-container {
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+            margin: 60px 0;
+            /* Add margin for mobile comfort */
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .auth-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 40px;
+            border-radius: 24px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+        }
+
+        [data-theme="dark"] .auth-card {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .auth-logo {
+            margin-bottom: 20px;
+        }
+
+        .auth-logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .auth-header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, var(--text-main), var(--primary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .auth-header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-main);
+            white-space: nowrap;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-wrapper i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            transition: var(--transition);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px 12px 42px;
+            background: var(--bg-main);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: var(--bg-card);
+            box-shadow: 0 0 0 4px var(--primary-glow);
+        }
+
+        .form-group input:focus+i {
+            color: var(--primary);
+        }
+
+        .terms-check {
+            grid-column: span 2;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin: 10px 0 25px;
+        }
+
+        .terms-check input {
+            width: 18px;
+            height: 18px;
+            margin-top: 2px;
+            cursor: pointer;
+        }
+
+        .terms-check label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .terms-check a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .auth-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
+            border-radius: 14px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 10px 20px -10px var(--primary);
+        }
+
+        .auth-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px -12px var(--primary);
+            filter: brightness(1.1);
+        }
+
+        .auth-footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .auth-footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .auth-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile specific adjustments */
+        @media (max-width: 600px) {
+            * {
+                transition: none !important;
+                animation-duration: 0s !important;
+            }
+            .form-grid {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 20px !important;
+            }
+
+            .form-group {
+                width: 100% !important;
+                grid-column: auto !important;
+            }
+
+            .auth-card {
+                padding: 30px 20px;
+            }
+
+            .auth-header h1 {
+                font-size: 1.75rem;
+            }
+        }
+
+        /* Auth RTL Overrides */
+        [dir="rtl"] {
+            text-align: right;
+        }
+
+        [dir="rtl"] .auth-controls {
+            right: auto;
+            left: 20px;
+            flex-direction: row-reverse;
+        }
+
+        [dir="rtl"] .form-group input {
+            padding: 12px 42px 12px 15px;
+        }
+
+        [dir="rtl"] .input-wrapper i {
+            left: auto;
+            right: 15px;
+        }
+
+    </style>
+</head>
+
+<body><div class="auth-controls"><button class="icon-btn" id="rtl-toggle" title="Switch RTL/LTR" onclick="toggleDir()"><i class="fas fa-globe"></i></button><button class="icon-btn" id="theme-toggle" title="Toggle Theme" onclick="toggleTheme()"><i class="fas fa-moon" id="theme-icon"></i></button></div><div class="auth-container"><div class="auth-card"><div class="auth-header"><div class="auth-logo"><a href="index.html"><img src="logo.png" alt="3DPrint Pro Logo"></a></div><h1>Create Account</h1><p>Join the future of 3D manufacturing</p></div><form action="user-dashboard.html"><div class="form-grid"><div class="form-group"><label for="fname">First Name</label><div class="input-wrapper"><input type="text" id="fname" placeholder="John" required><i class="fas fa-user"></i></div></div><div class="form-group"><label for="lname">Last Name</label><div class="input-wrapper"><input type="text" id="lname" placeholder="Doe" required><i class="fas fa-user"></i></div></div><div class="form-group full-width"><label for="email">Email Address</label><div class="input-wrapper"><input type="email" id="email" placeholder="john.doe@example.com" required><i class="fas fa-envelope"></i></div></div><div class="form-group"><label for="password">Password</label><div class="input-wrapper"><input type="password" id="password" placeholder="••••••••" required><i class="fas fa-lock"></i></div></div><div class="form-group"><label for="confirm-password">Confirm Password</label><div class="input-wrapper"><input type="password" id="confirm-password" placeholder="••••••••" required><i class="fas fa-shield-alt"></i></div></div><div class="terms-check"><input type="checkbox" id="terms" required><label for="terms">I agree to the <a href="#">Terms of Service</a>and <a href="#">Privacy Policy</a></label></div></div><button type="submit" class="auth-btn">Create Account</button></form><div class="auth-footer">Already have an account? <a href="login.html">Sign In</a></div></div></div><script>function toggleTheme() {
+            const html=document.documentElement;
+            const currentTheme=html.getAttribute('data-theme');
+            const newTheme=currentTheme==='dark' ? 'light': 'dark';
+            html.setAttribute('data-theme', newTheme);
+            const icon=document.getElementById('theme-icon');
+            icon.className=newTheme==='dark' ? 'fas fa-moon': 'fas fa-sun';
+
+            // Save preference
+            localStorage.setItem('theme', newTheme);
+        }
+
+        function toggleDir() {
+            const html=document.documentElement;
+            const currentDir=html.getAttribute('dir');
+            const newDir=currentDir==='ltr' ? 'rtl': 'ltr';
+            html.setAttribute('dir', newDir);
+            localStorage.setItem('dir', newDir);
+        }
+
+        // Load preference
+        const savedTheme=localStorage.getItem('theme');
+
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            document.getElementById('theme-icon').className=savedTheme==='dark' ? 'fas fa-moon': 'fas fa-sun';
+        }
+
+        const savedDir=localStorage.getItem('dir');
+
+        if (savedDir) {
+            document.documentElement.setAttribute('dir', savedDir);
+        }
+
+        </script></body></html>

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3DPrint Pro | The Future is Now (Home 2)</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <meta name="description"
+        content="Explore the futuristic side of 3D printing. Autonomous fleets, orbital manufacturing, and bio-synthesis.">
+    <style>
+        html,
+        body {
+            overflow-x: hidden !important;
+            max-width: 100% !important;
+        }
+
+        * {
+            box-sizing: border-box;
+            min-width: 0;
+        }
+    </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        /* Home 2 specific "Futuristic" overrides */
+        [data-theme="light"] body {
+            --primary: #8b5cf6;
+            --secondary: #ec4899;
+            --bg-main: #faf5ff;
+        }
+
+        body[data-theme="dark"] {
+            --primary: #a78bfa;
+            --secondary: #f472b6;
+        }
+
+        .futo-hero {
+            background: radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.1), transparent 70%),
+                url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="3DPrint Pro Logo" style="height: 42px; width: auto;">
+        </a>
+
+        <nav>
+            <div class="nav-item">
+                <a href="index.html" class="nav-link" style="color: var(--primary);">Home <i
+                        class="fas fa-chevron-down"></i></a>
+                <div class="dropdown">
+                    <a href="index.html" class="dropdown-link">Home 1</a>
+                    <a href="home2.html" class="dropdown-link">Home 2</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="about.html" class="nav-link">About</a>
+            </div>
+            <div class="nav-item">
+                <a href="services.html" class="nav-link">Services</a>
+            </div>
+            <div class="nav-item">
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-item">
+                <a href="user-dashboard.html" class="nav-link">Dashboard <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown">
+                    <a href="user-dashboard.html" class="dropdown-link">User Dashboard</a>
+                    <a href="admin-dashboard.html" class="dropdown-link">Admin Dashboard</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-right">
+            <button class="icon-btn" id="rtl-toggle" title="Switch RTL/LTR"><i class="fas fa-globe"></i></button>
+            <button class="icon-btn" id="theme-toggle" title="Toggle Theme"><i class="fas fa-sun"></i></button>
+            <a href="login.html" class="login-btn">Login</a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+        <div class="mobile-nav-drawer">
+            <button class="mobile-nav-link active" onclick="toggleMobileSub('home-sub',this)">
+                Home <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="mobile-sub-group" id="home-sub">
+                <a href="index.html" class="mobile-sub-link">Home 1</a>
+                <a href="home2.html" class="mobile-sub-link">Home 2</a>
+            </div>
+            <a href="about.html" class="mobile-nav-link">About</a>
+            <a href="services.html" class="mobile-nav-link">Services</a>
+            <a href="contact.html" class="mobile-nav-link">Contact</a>
+            <button class="mobile-nav-link" onclick="toggleMobileSub('dash-sub',this)">
+                Dashboard <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="mobile-sub-group" id="dash-sub">
+                <a href="user-dashboard.html" class="mobile-sub-link">User Dashboard</a>
+                <a href="admin-dashboard.html" class="mobile-sub-link">Admin Dashboard</a>
+            </div>
+            <div class="mobile-nav-footer">
+                <a href="login.html" class="login-btn" style="flex:1; text-align:center;">Login</a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- Futuristic Hero (Minimalist & Dynamic Theme Support) -->
+        <section class="hero"
+            style="display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 5%; min-height: 100vh; background: radial-gradient(circle at 50% 50%, var(--primary-glow), var(--bg-main)); position: relative; overflow: hidden;">
+            <!-- Subtle Animated Particles/Grids for Futuristic Look -->
+            <div
+                style="position: absolute; inset: 0; opacity: 0.05; background-image: radial-gradient(var(--primary) 1px, transparent 1px); background-size: 40px 40px;">
+            </div>
+
+            <div style="z-index: 2; max-width: 1000px;">
+                <div
+                    style="display: inline-block; padding: 6px 20px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 50px; margin-bottom: 25px;">
+                    <span
+                        style="font-size: 0.8rem; font-weight: 700; color: var(--primary); letter-spacing: 2px;">NEURAL
+                        SYNTHESIS LIVE</span>
+                </div>
+                <h1
+                    style="font-size: clamp(2.5rem, 10vw, 5.5rem); margin: 30px 0; line-height: 0.9; color: var(--text-main); font-weight: 800;">
+                    Manufacturing <br> <span
+                        style="background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Redefined</span>
+                </h1>
+                <p
+                    style="font-size: 1.5rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 50px; line-height: 1.6;">
+                    The world's most advanced autonomous manufacturing network. Molecular precision meets global edge
+                    scale.</p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="#" class="login-btn"
+                        style="padding: 18px 45px; font-size: 1.1rem; border: none; box-shadow: 0 0 40px var(--primary-glow);">Launch
+                        Interface</a>
+                    <a href="#" class="icon-btn"
+                        style="width: auto; padding: 0 25px; border: 1px solid var(--border); border-radius: 50px; color: var(--text-main); background: var(--bg-card); backdrop-filter: blur(10px);">Explore
+                        Network</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Quantum Metrics -->
+        <section style="background: var(--bg-card); border-top: 1px solid var(--border);">
+            <div class="grid-3">
+                <div style="padding: 20px; border-right: 1px solid var(--border);">
+                    <h2 style="font-family: monospace; color: var(--secondary);">0.0001s</h2>
+                    <p style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Slicing Latency</p>
+                </div>
+                <div style="padding: 20px; border-right: 1px solid var(--border);">
+                    <h2 style="font-family: monospace; color: var(--secondary);">100%</h2>
+                    <p style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Solar Autonomy</p>
+                </div>
+                <div style="padding: 20px;">
+                    <h2 style="font-family: monospace; color: var(--secondary);">No-IP</h2>
+                    <p style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Leads Data Strategy
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Autonomous Fleet -->
+        <section id="fleet">
+            <div style="display: flex; gap: 60px; align-items: center; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=800&q=80"
+                        style="width: 100%; border-radius: 40px; filter: hue-rotate(280deg);">
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <span class="section-tag">Swarm Tech</span>
+                    <h2 class="section-title">Autonomous Hub Fleets</h2>
+                    <p>Our hubs are now fully uncrewed. Coordinated AI swarms manage print queues, material refills, and
+                        quality control with zero human intervention.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Molecular Synthesis -->
+        <section id="molecular" style="background: var(--bg-card);">
+            <div class="section-head">
+                <h2 class="section-title">Beyond Filament</h2>
+                <p>We work at the molecular level, synthesizing structures with properties not found in nature.</p>
+            </div>
+            <div class="grid-3">
+                <div class="card" style="background: rgba(139, 92, 246, 0.05); border: 1px dashed var(--primary);">
+                    <h4>Nano-Lattice</h4>
+                    <p>Rigid strength at 1/100th the weight of carbon fiber.</p>
+                </div>
+                <div class="card" style="background: rgba(139, 92, 246, 0.05); border: 1px dashed var(--primary);">
+                    <h4>Bio-Ceramics</h4>
+                    <p>Ossifying materials for next-gen bone replacement.</p>
+                </div>
+                <div class="card" style="background: rgba(139, 92, 246, 0.05); border: 1px dashed var(--primary);">
+                    <h4>Flux-Polymer</h4>
+                    <p>Variable density material that changes rigidity via app.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Orbital Mfg -->
+        <section id="orbital">
+            <div
+                style="background: #000; border-radius: 40px; padding: 100px 10%; color: white; position: relative; overflow: hidden;">
+                <div
+                    style="position: absolute; right: 0; top: -10%; width: 40%; height: 120%; background: radial-gradient(circle, var(--primary), transparent 70%); opacity: 0.3; pointer-events: none;">
+                </div>
+                <h2 class="section-title" style="color: white; font-size: 3rem;">Orbital Synthesis 2027</h2>
+                <p style="font-size: 1.25rem; max-width: 600px; margin: 20px 0 40px; opacity: 0.8;">Zero-gravity enables
+                    the printing of perfect spheres and flawless crystals. Pre-booking for LEO station batches is now
+                    open.</p>
+                <a href="#" class="login-btn" style="background: var(--primary); border: none;">Go Beyond Earth</a>
+            </div>
+        </section>
+
+        <!-- Section 6: Bio-Printing -->
+        <section id="biosynthesis">
+            <div style="display: flex; gap: 60px; align-items: center; flex-wrap: wrap-reverse;">
+                <div style="flex: 1; min-width: 300px;">
+                    <span class="section-tag">Life Science</span>
+                    <h2 class="section-title">The Bio-Synthesis Frontier</h2>
+                    <p>Crafting biological architectures for research and therapeutic use. Cellular scaffolds and
+                        organoids printed on-demand.</p>
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="3d6.webp"
+                        style="width: 100%; border-radius: 40px;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Cyber Security -->
+        <section id="vault" style="background: var(--bg-card);">
+            <div class="grid-3" style="align-items: center;">
+                <div style="grid-column: span 2;">
+                    <span class="section-tag">Security</span>
+                    <h2 class="section-title">Project Vault</h2>
+                    <p>Your designs are never at rest in plain text. Every file is fragmented and stored across a
+                        private decentralized ledger. Access requires a multi-sig biometric key.</p>
+                </div>
+                <div class="card" style="text-align: center; border-color: var(--secondary);">
+                    <i class="fas fa-fingerprint"
+                        style="font-size: 3rem; color: var(--secondary); margin-bottom: 20px;"></i>
+                    <h4>Biometric Access</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 8: Direct-to-Hub -->
+        <section id="edge">
+            <div class="section-head">
+                <h2 class="section-title">Edge Manufacturing</h2>
+                <p>Don't wait for shipping. Send your design to the hub nearest to your site. Our network delivers
+                    within 50 miles of 80% of the global population.</p>
+            </div>
+            <div
+                style="height: clamp(180px, 35vw, 300px); background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80'); background-size: cover; border-radius: 30px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                <div style="padding: 20px 40px; background: rgba(0,0,0,0.8); border-radius: 20px; color: white;">98ms
+                    Average Sync Time</div>
+            </div>
+        </section>
+
+        <!-- Section 9: AI Design -->
+        <section id="ai-design" style="background: var(--bg-card);">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <span class="section-tag">Prompt-to-Product</span>
+                <h2 class="section-title">LLM Aided CAD</h2>
+                <p style="font-size: 1.2rem; margin: 20px 0 40px;">Describe your part's constraints and function. Our
+                    integrated AI will generate 100 optimized iterations in seconds. You pick, we print.</p>
+                <div
+                    style="background: var(--bg-main); padding: 20px; border-radius: 12px; border: 1px solid var(--border); font-family: monospace;">
+                    > "Generate a 40cm bracket for solar panels, max 200g, wind-resistant B-tier."
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 10: 4D Dynamics -->
+        <section id="4d">
+            <div class="grid-3">
+                <div class="card">
+                    <h3>4D Materials</h3>
+                    <p>Prints that respond to heat, light, or water to change shape post-production.</p>
+                </div>
+                <div style="grid-column: span 2;">
+                    <img src="3d7.webp"
+                        style="width: 100%; height: 200px; object-fit: cover; border-radius: 24px;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 11: Metaverse Design -->
+        <section id="metaverse" style="background: var(--bg-card);">
+            <div style="display: flex; gap: 60px; align-items: center; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?auto=format&fit=crop&w=800&q=80"
+                        style="width: 100%; border-radius: 40px;">
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <h2 class="section-title">Virtual Foundry</h2>
+                    <p>Enter the spatial design suite. Use VR to manipulate your models at 100:1 scale before sending
+                        them to the printer.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 12: Sustain 2.0 -->
+        <section id="carbon">
+            <div style="border-radius: 40px; padding: 60px; border: 2px solid var(--primary); text-align: center;">
+                <h2 style="color: var(--primary);">Carbon-Negative Printing</h2>
+                <p style="margin: 20px 0;">Every print job triggers the capture of 2kg of atmospheric CO2, converted
+                    into permanent structural fill for future prints.</p>
+            </div>
+        </section>
+
+        <!-- Section 13: Global Edge Network -->
+        <section id="network-v2" style="background: var(--bg-card);">
+            <div class="section-head">
+                <h2 class="section-title">The Mesh</h2>
+            </div>
+            <div class="grid-3">
+                <div class="card">
+                    <h4>Nodes Active</h4>
+                    <p>1,245</p>
+                </div>
+                <div class="card">
+                    <h4>Self-Healing Hubs</h4>
+                    <p>89%</p>
+                </div>
+                <div class="card">
+                    <h4>Average Lead Time</h4>
+                    <p>6.4h</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 14: Pre-Order Beta -->
+        <section id="beta">
+            <div
+                style="background: linear-gradient(135deg, var(--secondary), var(--primary)); border-radius: 40px; padding: 100px 5%; color: white; text-align: center;">
+                <h2>Join the Beta</h2>
+                <p style="margin: 20px 0 40px;">Get early access to Liquid-Glass and Super-Alloy printing. Limited to
+                    500 invitations.</p>
+                <a href="#" class="login-btn" style="background: white; color: var(--secondary);">Request Invitation</a>
+            </div>
+        </section>
+
+        <!-- Section 15: Newsletter -->
+        <section id="newsletter-v2" style="padding: 100px 10%; background: var(--bg-card); text-align: center;">
+            <span class="section-tag">Communique</span>
+            <h2 class="section-title">The Singularity Report</h2>
+            <p style="margin: 20px 0 40px;">No ads. Just breakthrough tech data once a month.</p>
+            <div style="display: flex; max-width: 500px; margin: 0 auto; gap: 10px; flex-wrap: wrap;">
+                <input type="text" placeholder="Access Code / Email"
+                    style="flex: 1; min-width: 0; padding: 15px 25px; border-radius: 30px; border: 1px solid var(--border); background: var(--bg-main); color: var(--text-main);">
+                <button class="login-btn" style="border: none; cursor: pointer;">Sync</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-about">
+                <a href="index.html" class="logo footer-logo">
+                    <img src="logo.png" alt="3DPrint Pro Logo" style="height: 48px; width: auto;">
+                </a>
+                <p style="color: var(--text-muted);">The world's leading luxury 3D printing agency. Crafting the
+                    impossible with precision and style.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="#">Knowledge Base</a></li>
+                    <li><a href="#">API Docs</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 3DPrint Pro. All rights reserved.</p>
+            <div style="display: flex; gap: 20px;">
+                <a href="#" style="color: var(--text-muted);"><i class="fab fa-twitter"></i></a>
+                <a href="#" style="color: var(--text-muted);"><i class="fab fa-linkedin"></i></a>
+                <a href="#" style="color: var(--text-muted);"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobile-nav');
+        const overlay = document.getElementById('mobile-nav-overlay');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            mobileNav.classList.toggle('open');
+            document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+        });
+        overlay.addEventListener('click', () => {
+            hamburger.classList.remove('open');
+            mobileNav.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+        function toggleMobileSub(id, btn) {
+            document.getElementById(id).classList.toggle('open');
+            btn.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

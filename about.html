@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | 3DPrint Pro</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <meta name="description"
+        content="Discover the story, mission, and technology behind 3DPrint Pro. Leaders in industrial 3D printing.">
+    <style>
+        html,
+        body {
+            overflow-x: hidden !important;
+            max-width: 100% !important;
+        }
+
+        * {
+            box-sizing: border-box;
+            min-width: 0;
+        }
+    </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="3DPrint Pro Logo" style="height: 42px; width: auto;">
+        </a>
+
+        <nav>
+            <div class="nav-item">
+                <a href="index.html" class="nav-link">Home <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown">
+                    <a href="index.html" class="dropdown-link">Home 1</a>
+                    <a href="home2.html" class="dropdown-link">Home 2</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="about.html" class="nav-link" style="color: var(--primary);">About</a>
+            </div>
+            <div class="nav-item">
+                <a href="services.html" class="nav-link">Services</a>
+            </div>
+            <div class="nav-item">
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-item">
+                <a href="user-dashboard.html" class="nav-link">Dashboard <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown">
+                    <a href="user-dashboard.html" class="dropdown-link">User Dashboard</a>
+                    <a href="admin-dashboard.html" class="dropdown-link">Admin Dashboard</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header-right">
+            <button class="icon-btn" id="rtl-toggle" title="Switch RTL/LTR"><i class="fas fa-globe"></i></button>
+            <button class="icon-btn" id="theme-toggle" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+            <a href="login.html" class="login-btn">Login</a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+        <div class="mobile-nav-drawer">
+            <button class="mobile-nav-link" onclick="toggleMobileSub('home-sub',this)">
+                Home <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="mobile-sub-group" id="home-sub">
+                <a href="index.html" class="mobile-sub-link">Home 1</a>
+                <a href="home2.html" class="mobile-sub-link">Home 2</a>
+            </div>
+            <a href="about.html" class="mobile-nav-link active">About</a>
+            <a href="services.html" class="mobile-nav-link">Services</a>
+            <a href="contact.html" class="mobile-nav-link">Contact</a>
+            <button class="mobile-nav-link" onclick="toggleMobileSub('dash-sub',this)">
+                Dashboard <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="mobile-sub-group" id="dash-sub">
+                <a href="user-dashboard.html" class="mobile-sub-link">User Dashboard</a>
+                <a href="admin-dashboard.html" class="mobile-sub-link">Admin Dashboard</a>
+            </div>
+            <div class="mobile-nav-footer">
+                <a href="login.html" class="login-btn" style="flex:1; text-align:center;">Login</a>
+            </div>
+        </div>
+    </div>
+
+    <main style="padding-top: 80px;">
+        <!-- Section 1: Hero / Heritage -->
+        <section class="hero" style="height: 60vh; min-height: 500px;">
+            <div class="hero-content">
+                <span class="section-tag">Since 2020</span>
+                <h1 style="font-size: 4rem;">Pioneers of the Additive Age</h1>
+                <p>Born from a garage workshop, scaled to a global powerhouse. We redefined manufacturing for the modern
+                    world.</p>
+            </div>
+        </section>
+
+        <!-- Section 2: Leadership Team -->
+        <section id="leadership" style="background: var(--bg-card);">
+            <div class="section-head">
+                <span class="section-tag">Visionaries</span>
+                <h2 class="section-title">The Minds Behind the Layers</h2>
+            </div>
+            <div class="grid-3">
+                <div class="card" style="text-align: center; padding: 20px;">
+                    <div
+                        style="width: 150px; height: 150px; border-radius: 50%; background: #eee; margin: 0 auto 20px; overflow: hidden;">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3>Marcus Thorne</h3>
+                    <p style="color: var(--primary); font-weight: 600;">CEO & Founder</p>
+                    <p style="font-size: 0.9rem; margin-top: 10px;">Ex-Aerospace engineer with 15 years in additive
+                        tech.</p>
+                </div>
+                <div class="card" style="text-align: center; padding: 20px;">
+                    <div
+                        style="width: 150px; height: 150px; border-radius: 50%; background: #eee; margin: 0 auto 20px; overflow: hidden;">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3>Elena Rossi</h3>
+                    <p style="color: var(--primary); font-weight: 600;">CTO</p>
+                    <p style="font-size: 0.9rem; margin-top: 10px;">Computational geometry specialist and material
+                        scientist.</p>
+                </div>
+                <div class="card" style="text-align: center; padding: 20px;">
+                    <div
+                        style="width: 150px; height: 150px; border-radius: 50%; background: #eee; margin: 0 auto 20px; overflow: hidden;">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3>David Chen</h3>
+                    <p style="color: var(--primary); font-weight: 600;">COO</p>
+                    <p style="font-size: 0.9rem; margin-top: 10px;">Supply chain expert focused on distributed
+                        manufacturing.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Core Philosophy -->
+        <section id="philosophy">
+            <div class="grid-3" style="align-items: center;">
+                <div style="grid-column: span 2;">
+                    <span class="section-tag">Values</span>
+                    <h2 class="section-title">A Symphony of Bytes & Atoms</h2>
+                    <p style="font-size: 1.2rem; margin-top: 20px;">We believe that the digital and physical worlds
+                        should exist in perfect harmony. Every model we print is treated as a masterpiece of engineering
+                        and art.</p>
+                </div>
+                <div class="card" style="background: var(--primary); color: white;">
+                    <h3>The Golden Rule</h3>
+                    <p>Accuracy is not an option; it's a requirement. We maintain tolerance levels within 5 microns
+                        across all materials.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Global Connectivity -->
+        <section id="global" style="background: var(--bg-card); position: relative; overflow: hidden;">
+            <div
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.05; background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80'); background-size: cover;">
+            </div>
+            <div style="position: relative; z-index: 1; text-align: center; max-width: 800px; margin: 0 auto;">
+                <span class="section-tag">Presence</span>
+                <h2 class="section-title">The Decentralized Revolution</h2>
+                <p>We are breaking the traditional logistics model. With hubs on four continents, we print locally to
+                    deliver globally, slashing shipping energy by 75%.</p>
+            </div>
+        </section>
+
+        <!-- Section 5: Proprietary Tech -->
+        <section id="tech-stack">
+            <div class="section-head">
+                <span class="section-tag">Innovation</span>
+                <h2 class="section-title">What Makes Us Different?</h2>
+            </div>
+            <div class="grid-3">
+                <div class="card">
+                    <i class="fas fa-brain" style="font-size: 2rem; color: var(--secondary); margin-bottom: 20px;"></i>
+                    <h3>Neuro-Slicing AI</h3>
+                    <p>Our custom software uses neural networks to optimize support structures, reducing material waste
+                        by 40%.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-vial" style="font-size: 2rem; color: var(--secondary); margin-bottom: 20px;"></i>
+                    <h3>Custom Photopolymers</h3>
+                    <p>We synthesize our own resins for extreme heat resistance and optical clarity found nowhere else.
+                    </p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-wind" style="font-size: 2rem; color: var(--secondary); margin-bottom: 20px;"></i>
+                    <h3>Plasma Sintering</h3>
+                    <p>Advanced metal printing that achieves 99.99% density for aerospace-grade applications.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Our Evolution (Centered) -->
+        <section id="evolution" style="background: var(--bg-main); padding: 120px 5%;">
+            <div class="section-head" style="text-align: center;">
+                <span class="section-tag">Archive</span>
+                <h2 class="section-title">The Evolution of Precision</h2>
+            </div>
+            <div style="position: relative; max-width: 800px; margin: 0 auto;">
+                <!-- Vertical Line -->
+                <div
+                    style="position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, transparent, var(--primary), var(--secondary), transparent); transform: translateX(-50%);">
+                </div>
+
+                <div style="position: relative; z-index: 1;">
+                    <!-- 2020 -->
+                    <div style="text-align: center; margin-bottom: 80px;">
+                        <div
+                            style="width: 56px; height: 56px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; border: 4px solid var(--bg-main); font-weight: 800; font-family: 'Outfit'; z-index: 2; font-size: 12px; white-space: nowrap; flex-shrink: 0;">
+                            2020</div>
+                        <div class="card timeline-card"
+                            style="text-align: center; max-width: 600px; margin: 0 auto; background: var(--bg-card); padding: 40px; border-radius: 20px;">
+                            <h3>The Genesis</h3>
+                            <p style="color: var(--text-muted); margin-top: 15px;">Founded in a small robotics lab in
+                                Berlin. Our first successful print was a complex turbine blade, setting the standard for
+                                the precision we maintain today.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2022 -->
+                    <div style="text-align: center; margin-bottom: 80px;">
+                        <div
+                            style="width: 56px; height: 56px; background: var(--secondary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; border: 4px solid var(--bg-main); font-weight: 800; font-family: 'Outfit'; z-index: 2; font-size: 12px; white-space: nowrap; flex-shrink: 0;">
+                            2022</div>
+                        <div class="card timeline-card"
+                            style="text-align: center; max-width: 600px; margin: 0 auto; background: var(--bg-card); padding: 40px; border-radius: 20px;">
+                            <h3>Scaling Up</h3>
+                            <p style="color: var(--text-muted); margin-top: 15px;">Launched our first industrial hub in
+                                Berlin and hit 50,000 prints milestone. Optimization of SLS technologies for commercial
+                                use.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2024 -->
+                    <div style="text-align: center; margin-bottom: 40px;">
+                        <div
+                            style="width: 56px; height: 56px; background: var(--accent); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; border: 4px solid var(--bg-main); font-weight: 800; font-family: 'Outfit'; z-index: 2; font-size: 12px; white-space: nowrap; flex-shrink: 0;">
+                            2024</div>
+                        <div class="card timeline-card"
+                            style="text-align: center; max-width: 600px; margin: 0 auto; background: var(--bg-card); padding: 40px; border-radius: 20px;">
+                            <h3>A New Paradigm</h3>
+                            <p style="color: var(--text-muted); margin-top: 15px;">Developed our proprietary material
+                                line and expanded to aerospace partnerships. Entry into autonomous print-fleet
+                                management.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Awards & Recognition -->
+        <section id="awards">
+            <div class="section-head">
+                <span class="section-tag">Elite Status</span>
+                <h2 class="section-title">Validated Excellence</h2>
+            </div>
+            <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 40px;">
+                <div style="text-align: center;">
+                    <i class="fas fa-trophy" style="font-size: 3rem; color: #ffd700; margin-bottom: 15px;"></i>
+                    <h4>Global Design Award</h4>
+                    <p style="color: var(--text-muted);">2023 - Innovative Tech</p>
+                </div>
+                <div style="text-align: center;">
+                    <i class="fas fa-medal" style="font-size: 3rem; color: #c0c0c0; margin-bottom: 15px;"></i>
+                    <h4>Green Tech Winner</h4>
+                    <p style="color: var(--text-muted);">2024 - Sustainability</p>
+                </div>
+                <div style="text-align: center;">
+                    <i class="fas fa-star" style="font-size: 3rem; color: #cd7f32; margin-bottom: 15px;"></i>
+                    <h4>Forbes Tech Top 50</h4>
+                    <p style="color: var(--text-muted);">Rising Stars List</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 8: Internal Culture -->
+        <section id="culture" style="background: var(--bg-card);">
+            <div style="display: flex; gap: 60px; align-items: center; flex-wrap: wrap-reverse;">
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80"
+                        style="width: 100%; border-radius: 24px;">
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <span class="section-tag">Life at 3DPrint Pro</span>
+                    <h2 class="section-title">Where Makers Thrive</h2>
+                    <p>Our team is composed of hackers, artists, and scientists. We foster a culture of radical
+                        experimentation where "failure" is just the first iteration of success.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 9: Sustainability Detail -->
+        <section id="eco-manifesto">
+            <div style="background: #10b981; border-radius: 40px; padding: 100px 10%; color: white;">
+                <div class="section-head">
+                    <h2 class="section-title" style="color: white;">The Zero-Waste Manifesto</h2>
+                </div>
+                <div class="grid-3">
+                    <div>
+                        <h3>Circular Economy</h3>
+                        <p>We reclaim 100% of failed prints and support structures, processing them back into raw
+                            filament.</p>
+                    </div>
+                    <div>
+                        <h3>Solar-Powered Hubs</h3>
+                        <p>Our main production facilities in Arizona and Spain run exclusively on renewable energy.</p>
+                    </div>
+                    <div>
+                        <h3>Biodegradable Range</h3>
+                        <p>Investing heavily in plant-based, compostable materials that outperform traditional plastics.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 10: The Road Ahead -->
+        <section id="future">
+            <div class="section-head">
+                <span class="section-tag">What's Next</span>
+                <h2 class="section-title">Beyond the Third Dimension</h2>
+            </div>
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <p style="font-size: 1.5rem; color: var(--primary); font-weight: 700; margin-bottom: 40px;">"We're not
+                    just building parts; we're building the infrastructure for a post-scarcity world."</p>
+                <p>Join us as we explore 4D printing (time-responsive materials), orbital manufacturing, and biological
+                    tissue synthesis. The future is layered.</p>
+                <div style="margin-top: 60px;">
+                    <a href="contact.html" class="login-btn" style="padding: 15px 40px;">Collaborate With Us</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-about">
+                <a href="index.html" class="logo footer-logo">
+                    <img src="logo.png" alt="3DPrint Pro Logo" style="height: 48px; width: auto;">
+                </a>
+                <p style="color: var(--text-muted);">The world's leading luxury 3D printing agency. Crafting the
+                    impossible with precision and style.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="#">Knowledge Base</a></li>
+                    <li><a href="#">API Docs</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 3DPrint Pro. All rights reserved.</p>
+            <div style="display: flex; gap: 20px;">
+                <a href="#" style="color: var(--text-muted);"><i class="fab fa-twitter"></i></a>
+                <a href="#" style="color: var(--text-muted);"><i class="fab fa-linkedin"></i></a>
+                <a href="#" style="color: var(--text-muted);"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobile-nav');
+        const overlay = document.getElementById('mobile-nav-overlay');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            mobileNav.classList.toggle('open');
+            document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+        });
+        overlay.addEventListener('click', () => {
+            hamburger.classList.remove('open');
+            mobileNav.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+        function toggleMobileSub(id, btn) {
+            document.getElementById(id).classList.toggle('open');
+            btn.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>
