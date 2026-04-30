@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel | 3DPrint Pro</title>
-    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="icon" type="image/svg+xml" href="logo-icon.svg">
     <style>
         html,
         body {
@@ -95,30 +95,37 @@
         }
 
         .sidebar-logo {
-            padding: 30px 24px;
+            padding: 24px;
             display: flex;
             align-items: center;
             gap: 12px;
             text-decoration: none;
         }
 
-        .logo-box {
+        .sidebar-logo .logo-icon {
             width: 42px;
             height: 42px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
+            flex-shrink: 0;
+            filter: drop-shadow(0 4px 10px var(--primary-glow));
         }
 
-        .logo-text {
-            font-family: 'Outfit';
+        .sidebar-logo .logo-text {
+            font-family: 'Outfit', sans-serif;
             font-weight: 800;
             font-size: 1.3rem;
             color: var(--text-main);
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar-logo .logo-text .text-accent {
+            color: #6366f1;
+            background: linear-gradient(135deg, #6366f1, #06b6d4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-left: 4px;
         }
 
         .nav-label {
@@ -391,8 +398,8 @@
 
     <aside class="sidebar" id="sidebar">
         <a href="index.html" class="sidebar-logo">
-            <img src="logo.png" alt="3DPrint Pro Logo"
-                style="height: 55px; width: auto; display: block; margin: 0 auto;">
+            <img src="logo-icon.svg" alt="3DPrint Pro" class="logo-icon">
+            <div class="logo-text">3DPrint <span class="text-accent">Pro</span></div>
         </a>
 
         <div class="nav-list">
