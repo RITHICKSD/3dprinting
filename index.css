@@ -319,9 +319,13 @@ nav {
     justify-content: center;
     width: 42px;
     height: 42px;
-    border-radius: 12px;
+    border-radius: 50%;
     transition: var(--transition);
     border: 1px solid transparent;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: 0.5px;
+    font-size: 0.85rem;
 }
 
 .icon-btn:hover {

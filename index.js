@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
 
         html.setAttribute('dir', newDir);
+        rtlBtn.textContent = newDir.toUpperCase();
         localStorage.setItem('dir', newDir);
     });
 
@@ -46,6 +47,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedDir = localStorage.getItem('dir');
     if (savedDir) {
         document.documentElement.setAttribute('dir', savedDir);
+        rtlBtn.textContent = savedDir.toUpperCase();
+    } else {
+        rtlBtn.textContent = 'LTR';
     }
 
     // Intersection Observer for reveal animations

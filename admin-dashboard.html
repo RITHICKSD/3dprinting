@@ -181,10 +181,10 @@
         }
 
         .foot-btn {
-            flex: 1;
-            padding: 10px;
+            width: 42px;
+            height: 42px;
             border: 1px solid var(--border);
-            border-radius: 12px;
+            border-radius: 50%;
             background: none;
             color: var(--text-muted);
             cursor: pointer;
@@ -192,8 +192,10 @@
             align-items: center;
             justify-content: center;
             gap: 6px;
-            font-size: 0.8rem;
-            font-weight: 600;
+            font-size: 0.85rem;
+            font-weight: 700;
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: 0.5px;
         }
 
         .foot-btn:hover {
@@ -418,9 +420,8 @@
         </div>
 
         <div class="sidebar-footer">
-            <button class="foot-btn" onclick="toggleTheme()" title="Toggle Theme"><i class="fas fa-moon"></i></button>
-            <button class="foot-btn" onclick="toggleDir()" title="Toggle Direction"><i
-                    class="fas fa-globe"></i></button>
+            <button class="foot-btn" onclick="toggleTheme()" title="Toggle Theme"><i class="fas fa-moon" id="theme-icon"></i></button>
+            <button class="foot-btn" id="rtl-toggle-sidebar" onclick="toggleDir()" title="Toggle Direction">LTR</button>
         </div>
     </aside>
 
@@ -525,6 +526,7 @@
             const dir = html.getAttribute('dir') || 'ltr';
             const newDir = dir === 'ltr' ? 'rtl' : 'ltr';
             html.setAttribute('dir', newDir);
+            document.getElementById('rtl-toggle-sidebar').textContent = newDir.toUpperCase();
             localStorage.setItem('dir', newDir);
         }
 
@@ -536,6 +538,9 @@
         const savedDir = localStorage.getItem('dir');
         if (savedDir) {
             document.documentElement.setAttribute('dir', savedDir);
+            document.getElementById('rtl-toggle-sidebar').textContent = savedDir.toUpperCase();
+        } else {
+            document.getElementById('rtl-toggle-sidebar').textContent = 'LTR';
         }
 
         function initCharts() {

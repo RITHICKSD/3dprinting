@@ -333,19 +333,22 @@
         }
 
         .sidebar-foot-btn {
-            flex: 1;
+            width: 42px;
+            height: 42px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
             padding: 10px;
-            border-radius: 12px;
+            border-radius: 50%;
             cursor: pointer;
             border: 1px solid var(--border);
             background: var(--bg-main);
             color: var(--text-muted);
-            font-size: 0.8rem;
-            font-weight: 500;
+            font-weight: 700;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
             transition: var(--transition);
             font-family: 'Inter', sans-serif;
         }
@@ -1031,9 +1034,7 @@
                 title="Toggle Dark/Light">
                 <i class="fas fa-moon" id="theme-icon"></i>
             </button>
-            <button class="sidebar-foot-btn" id="rtl-toggle-sidebar" onclick="toggleDir()" title="Toggle LTR/RTL">
-                <i class="fas fa-globe"></i>
-            </button>
+            <button class="sidebar-foot-btn" id="rtl-toggle-sidebar" onclick="toggleDir()" title="Toggle LTR/RTL">LTR</button>
         </div>
     </aside>
 
@@ -1354,6 +1355,7 @@
             const isRtl = html.getAttribute('dir') === 'rtl';
             const newDir = isRtl ? 'ltr' : 'rtl';
             html.setAttribute('dir', newDir);
+            document.getElementById('rtl-toggle-sidebar').textContent = newDir.toUpperCase();
             localStorage.setItem('dir', newDir);
         }
 
@@ -1374,6 +1376,9 @@
         const savedDir = localStorage.getItem('dir');
         if (savedDir) {
             document.documentElement.setAttribute('dir', savedDir);
+            document.getElementById('rtl-toggle-sidebar').textContent = savedDir.toUpperCase();
+        } else {
+            document.getElementById('rtl-toggle-sidebar').textContent = 'LTR';
         }
 
         /* ════════════════════════════════════

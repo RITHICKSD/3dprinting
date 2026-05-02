@@ -36,13 +36,17 @@
             color: var(--text-main);
             width: 45px;
             height: 45px;
-            border-radius: 12px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             transition: var(--transition);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            font-weight: 700;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
         }
 
         .icon-btn:hover {
@@ -285,7 +289,7 @@
     </style>
 </head>
 
-<body><div class="auth-controls"><button class="icon-btn" id="rtl-toggle" title="Switch RTL/LTR" onclick="toggleDir()"><i class="fas fa-globe"></i></button><button class="icon-btn" id="theme-toggle" title="Toggle Theme" onclick="toggleTheme()"><i class="fas fa-moon" id="theme-icon"></i></button></div><div class="auth-container"><div class="auth-card"><div class="auth-header"><div class="auth-logo"><a href="index.html" class="logo" style="justify-content: center;"><img src="logo-icon.svg" alt="3DPrint Pro" class="logo-icon"><span class="logo-text">3DPrint <span class="text-accent">Pro</span></span></a></div><h1>Create Account</h1><p>Join the future of 3D manufacturing</p></div><form action="user-dashboard.html"><div class="form-grid"><div class="form-group"><label for="fname">First Name</label><div class="input-wrapper"><input type="text" id="fname" placeholder="John" required><i class="fas fa-user"></i></div></div><div class="form-group"><label for="lname">Last Name</label><div class="input-wrapper"><input type="text" id="lname" placeholder="Doe" required><i class="fas fa-user"></i></div></div><div class="form-group full-width"><label for="email">Email Address</label><div class="input-wrapper"><input type="email" id="email" placeholder="john.doe@example.com" required><i class="fas fa-envelope"></i></div></div><div class="form-group"><label for="password">Password</label><div class="input-wrapper"><input type="password" id="password" placeholder="••••••••" required><i class="fas fa-lock"></i></div></div><div class="form-group"><label for="confirm-password">Confirm Password</label><div class="input-wrapper"><input type="password" id="confirm-password" placeholder="••••••••" required><i class="fas fa-shield-alt"></i></div></div><div class="terms-check"><input type="checkbox" id="terms" required><label for="terms">I agree to the <a href="#">Terms of Service</a>and <a href="#">Privacy Policy</a></label></div></div><button type="submit" class="auth-btn">Create Account</button></form><div class="auth-footer">Already have an account? <a href="login.html">Sign In</a></div></div></div><script>function toggleTheme() {
+<body><div class="auth-controls"><button class="icon-btn" id="rtl-toggle" title="Switch RTL/LTR" onclick="toggleDir()">LTR</button><button class="icon-btn" id="theme-toggle" title="Toggle Theme" onclick="toggleTheme()"><i class="fas fa-moon" id="theme-icon"></i></button></div><div class="auth-container"><div class="auth-card"><div class="auth-header"><div class="auth-logo"><a href="index.html" class="logo" style="justify-content: center;"><img src="logo-icon.svg" alt="3DPrint Pro" class="logo-icon"><span class="logo-text">3DPrint <span class="text-accent">Pro</span></span></a></div><h1>Create Account</h1><p>Join the future of 3D manufacturing</p></div><form action="user-dashboard.html"><div class="form-grid"><div class="form-group"><label for="fname">First Name</label><div class="input-wrapper"><input type="text" id="fname" placeholder="John" required><i class="fas fa-user"></i></div></div><div class="form-group"><label for="lname">Last Name</label><div class="input-wrapper"><input type="text" id="lname" placeholder="Doe" required><i class="fas fa-user"></i></div></div><div class="form-group full-width"><label for="email">Email Address</label><div class="input-wrapper"><input type="email" id="email" placeholder="john.doe@example.com" required><i class="fas fa-envelope"></i></div></div><div class="form-group"><label for="password">Password</label><div class="input-wrapper"><input type="password" id="password" placeholder="••••••••" required><i class="fas fa-lock"></i></div></div><div class="form-group"><label for="confirm-password">Confirm Password</label><div class="input-wrapper"><input type="password" id="confirm-password" placeholder="••••••••" required><i class="fas fa-shield-alt"></i></div></div><div class="terms-check"><input type="checkbox" id="terms" required><label for="terms">I agree to the <a href="#">Terms of Service</a>and <a href="#">Privacy Policy</a></label></div></div><button type="submit" class="auth-btn">Create Account</button></form><div class="auth-footer">Already have an account? <a href="login.html">Sign In</a></div></div></div><script>function toggleTheme() {
             const html=document.documentElement;
             const currentTheme=html.getAttribute('data-theme');
             const newTheme=currentTheme==='dark' ? 'light': 'dark';
@@ -302,6 +306,7 @@
             const currentDir=html.getAttribute('dir');
             const newDir=currentDir==='ltr' ? 'rtl': 'ltr';
             html.setAttribute('dir', newDir);
+            document.getElementById('rtl-toggle').textContent = newDir.toUpperCase();
             localStorage.setItem('dir', newDir);
         }
 
@@ -317,6 +322,9 @@
 
         if (savedDir) {
             document.documentElement.setAttribute('dir', savedDir);
+            document.getElementById('rtl-toggle').textContent = savedDir.toUpperCase();
+        } else {
+            document.getElementById('rtl-toggle').textContent = 'LTR';
         }
 
         </script></body></html>
