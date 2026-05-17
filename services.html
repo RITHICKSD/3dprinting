@@ -98,8 +98,9 @@
 
     <main style="padding-top: 80px;">
         <!-- Section 1: Hero -->
-        <section class="hero" style="height: 60vh; min-height: 500px;">
-            <div class="hero-content">
+        <section class="hero" style="height: 60vh; min-height: 500px; background-image: url('3d3.jpg'); background-size: cover; background-position: center; position: relative; overflow: hidden;">
+            <div class="hero-overlay" style="position: absolute; inset: 0; background: var(--bg-main); opacity: 0.75; z-index: 1;"></div>
+            <div class="hero-content" style="position: relative; z-index: 2;">
                 <span class="section-tag">Capabilities</span>
                 <h1 style="font-size: 4rem;">The Architecture of Possibility</h1>
                 <p>From a single concept to a million units, we provide the industrial backbone for your most ambitious
@@ -159,7 +160,7 @@
             </div>
             <div class="grid-3">
                 <div class="card">
-                    <i class="fas fa-fire" style="font-size: 2rem; color: var(--accent); margin-bottom: 20px;"></i>
+                    <i class="fas fa-fire" style="font-size: 2rem; color: var(--primary); margin-bottom: 20px;"></i>
                     <h3>High-Temp PEEK</h3>
                     <p>Advanced polymers for extreme thermal environments.</p>
                 </div>
