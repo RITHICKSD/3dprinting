@@ -530,6 +530,41 @@
             .sidebar-overlay.active {
                 pointer-events: all;
             }
+
+            .top-header {
+                padding: 0 16px;
+                gap: 12px;
+            }
+
+            .header-title {
+                font-size: 1.05rem;
+                max-width: 140px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            
+            .header-actions {
+                gap: 8px;
+            }
+
+            .header-actions .action-btn[title="Search"],
+            .header-actions .action-btn[title="Notifications"] {
+                display: none;
+            }
+
+            .action-btn {
+                width: 32px;
+                height: 32px;
+                border-radius: 8px;
+                font-size: 0.8rem;
+            }
+
+            .user-avatar {
+                width: 32px;
+                height: 32px;
+                font-size: 0.8rem;
+            }
         }
 
         /* ════════════════════════════════════
@@ -1052,7 +1087,8 @@
                 <span></span><span></span><span></span>
             </button>
 
-            <div style="flex:1;">
+            <div style="flex:1; display: flex; align-items: center; gap: 10px;">
+                <h1 class="header-title" id="page-title">Dashboard Overview</h1>
             </div>
 
             <div class="header-actions">
@@ -1061,7 +1097,14 @@
                     <i class="fas fa-bell"></i>
                     <span class="notif-dot"></span>
                 </button>
-                <div class="user-avatar" title="Marcus Thorne">MT</div>
+                <!-- Header Theme Toggle -->
+                <button class="action-btn" id="theme-toggle-header" onclick="toggleTheme()" title="Toggle Theme">
+                    <i class="fas fa-moon" id="theme-icon-header"></i>
+                </button>
+                <!-- Header Direction Toggle -->
+                <button class="action-btn" id="rtl-toggle-header" onclick="toggleDir()" title="Toggle LTR/RTL">LTR</button>
+                <!-- Header Profile Link -->
+                <div class="user-avatar" title="Marcus Thorne" onclick="switchTab('settings', document.getElementById('nav-settings'))">MT</div>
             </div>
         </header>
 
@@ -1342,10 +1385,16 @@
         function toggleTheme() {
             const html = document.documentElement;
             const isDark = html.getAttribute('data-theme') === 'dark';
-            html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-            document.getElementById('theme-icon').className = isDark ? 'fas fa-moon' : 'fas fa-sun';
-            localStorage.setItem('theme', isDark ? 'light' : 'dark');
-            // Update chart colors
+            const newTheme = isDark ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            
+            // Update both sidebar and header icons
+            ['theme-icon', 'theme-icon-header'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            });
+            
+            localStorage.setItem('theme', newTheme);
             updateChartTheme();
         }
 
@@ -1355,7 +1404,13 @@
             const isRtl = html.getAttribute('dir') === 'rtl';
             const newDir = isRtl ? 'ltr' : 'rtl';
             html.setAttribute('dir', newDir);
-            document.getElementById('rtl-toggle-sidebar').textContent = newDir.toUpperCase();
+            
+            // Update both sidebar and header labels
+            ['rtl-toggle-sidebar', 'rtl-toggle-header'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.textContent = newDir.toUpperCase();
+            });
+            
             localStorage.setItem('dir', newDir);
         }
 
@@ -1370,15 +1425,24 @@
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme) {
             document.documentElement.setAttribute('data-theme', savedTheme);
-            document.getElementById('theme-icon').className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            ['theme-icon', 'theme-icon-header'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            });
         }
 
         const savedDir = localStorage.getItem('dir');
         if (savedDir) {
             document.documentElement.setAttribute('dir', savedDir);
-            document.getElementById('rtl-toggle-sidebar').textContent = savedDir.toUpperCase();
+            ['rtl-toggle-sidebar', 'rtl-toggle-header'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.textContent = savedDir.toUpperCase();
+            });
         } else {
-            document.getElementById('rtl-toggle-sidebar').textContent = 'LTR';
+            ['rtl-toggle-sidebar', 'rtl-toggle-header'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.textContent = 'LTR';
+            });
         }
 
         /* ════════════════════════════════════
